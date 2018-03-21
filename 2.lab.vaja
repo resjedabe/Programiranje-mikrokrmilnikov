@@ -1,0 +1,97 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <conio.h>
+
+struct kompleks{
+        double real;
+        double imag;
+};
+
+struct kompleks sestej(struct kompleks a,struct kompleks b){
+    struct kompleks s;
+    s.real = a.real+b.real;
+    s.imag = a.imag+b.imag;
+    return s;
+
+};
+struct kompleks odstej (struct kompleks a,struct kompleks b){
+        struct kompleks o;
+        o.real = a.real-b.real;
+        o.imag = a.imag-b.imag;
+        return o;
+
+};
+struct kompleks zmnozi(struct kompleks a,struct kompleks b){
+    struct kompleks z;
+    z.real = (a.real*b.real)-(a.imag*b.imag);
+    z.imag = (a.real*b.imag)+(b.real*a.imag);
+    return z;
+
+};
+struct kompleks deli(struct kompleks a,struct kompleks b){
+    struct kompleks d;
+    d.real = ((a.real*b.real)+(a.imag*b.imag))/((b.real*b.real)+(b.imag*b.imag));
+    d.imag = ((a.imag*b.real)-(a.real*b.imag))/((b.real*b.real)+(b.imag*b.imag));
+    return d;
+
+};
+
+void menu(){
+    printf("\n         MENI:         \n");
+ printf("\n-Ce zelite kompleksni stevili sesteti pritisnite znak: p \n");
+printf("\n-Ce zelite kompleksni stevili odsteti pritisnite znak: m \n");
+printf("\n-Ce zelite kompleksni stevili pomnoziti pritisnite znak: k \n");
+printf("\n-Ce zelite kompleksni stevili deliti pritisnite znak: d \n");
+printf("\n-IZHOD: e \n");
+};
+
+
+int main()
+{
+
+
+    struct kompleks n1,n2,vsota,razlika,produkt,kolicnik;
+    printf("Vnesi kompleksno stevilo v obliki a+bi: \n");
+    scanf("%lf%lf",&n1.real,&n1.imag);
+    getchar();
+    printf("Vnesi kompleksno stevilo v obliki c+di: \n");
+    scanf("%lf%lf",&n2.real,&n2.imag);
+
+
+    menu();
+    char znak;
+    znak = _getch();
+
+
+    switch(znak){
+        case 'p':
+            vsota = sestej(n1,n2);
+            printf("\n Vsota vnesenih kompleksnih stevil je: %.2lf %+.2lfi\n",vsota.real,vsota.imag);
+            //system("pause");
+            break;
+        case 'm':
+            razlika = odstej(n1,n2);
+            printf("\nRazlika vnesenih kompleksnih stevil je: %.2lf %+.2lfi\n",razlika.real,razlika.imag);
+            //system("pause");
+            break;
+        case 'k':
+            produkt = zmnozi(n1,n2);
+            printf("\nProdukt vnesenih kompleksnih stevil je: %.2lf %+.2lfi\n",produkt.real, produkt.imag);
+           // system("pause");
+            break;
+        case 'd':
+            kolicnik = deli(n1,n2);
+            printf("\nKolicnik vnesenih kompleksnih stevil je: %.2lf %+.2lfi\n",kolicnik.real,kolicnik.imag);
+          //  system("pause");
+            break;
+        case 'e':
+            printf("\n    IZHOD!\n SE VIDIMO NASLEDNIC!\n");
+            printf("\n\nCopyright © 2018 resjedabe\nAll rights reserved.\nThis program or any portion thereof may not be reproduced or used in any manner whatsoever\n without the express written permission of the author\n except for the use of brief quotations in a review.\n\n ");
+           // system("pause");
+    }
+
+
+    return 0;
+
+
+}
