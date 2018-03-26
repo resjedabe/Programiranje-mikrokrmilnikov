@@ -3,8 +3,8 @@
 #include <conio.h>
 
 struct kompleks{
-        double real;
-        double imag;
+    double real;
+    double imag;
 };
 
 struct kompleks sestej(struct kompleks a,struct kompleks b){
@@ -37,8 +37,8 @@ struct kompleks deli(struct kompleks a,struct kompleks b){
 };
 
 void menu(){
-    printf("\n         MENI:         \n");
- printf("\n-Ce zelite kompleksni stevili sesteti pritisnite znak: p \n");
+printf("\n         MENI:         \n");
+printf("\n-Ce zelite kompleksni stevili sesteti pritisnite znak: p \n");
 printf("\n-Ce zelite kompleksni stevili odsteti pritisnite znak: m \n");
 printf("\n-Ce zelite kompleksni stevili pomnoziti pritisnite znak: k \n");
 printf("\n-Ce zelite kompleksni stevili deliti pritisnite znak: d \n");
@@ -60,7 +60,7 @@ int main()
 
     menu();
     char znak;
-    znak = _getch();
+    while((znak = _getch())!='e'){
 
 
     switch(znak){
@@ -84,13 +84,12 @@ int main()
             printf("\nKolicnik vnesenih kompleksnih stevil je: %.2lf %+.2lfi\n",kolicnik.real,kolicnik.imag);
           //  system("pause");
             break;
-        case 'e':
-            printf("\n    IZHOD!\n SE VIDIMO NASLEDNIC!\n");
-            printf("\n\nCopyright © 2018 resjedabe\nAll rights reserved.\nThis program or any portion thereof may not be reproduced or used in any manner whatsoever\n without the express written permission of the author\n except for the use of brief quotations in a review.\n\n ");
-           // system("pause");
+
     }
-
-
+    }
+     printf("\n    IZHOD!\n SE VIDIMO NASLEDNJIC!\n");
+     printf("\n\nCopyright © 2018 by resjedabe\nAll rights reserved.\nThis program or any portion thereof may not be reproduced or used in any manner whatsoever\n without the express written permission of the author\n except for the use of brief quotations in a review.\n\n ");
+    system("pause");
     return 0;
 
 
